@@ -24,6 +24,7 @@
 
   </body>
   <footer>
+     <h3 class="title">About me</h3>
     <p>Check more of my background on my LinkedIn account: <a href="https://www.linkedin.com/in/jhon-guisao" target="_blank" rel="noopener noreferrer">https://www.linkedin.com/in/jhon-guisao</a></p>
   </footer>
 </html>
