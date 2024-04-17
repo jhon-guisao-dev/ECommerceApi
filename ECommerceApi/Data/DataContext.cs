@@ -18,6 +18,11 @@
 
         protected  override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<ProductCategory>()
+            .HasMany(left => left.Products)
+            .WithMany(right => right.ProductCategories)
+            .UsingEntity(join => join.ToTable("ProductsCategoryAssociation"));
+
             ProductCategorySeed.Seed(modelBuilder);
             CustomerSeed.Seed(modelBuilder);
 

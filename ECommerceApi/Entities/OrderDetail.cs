@@ -1,6 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations;
-
-namespace ECommerceApi.Data
+﻿namespace ECommerceApi.Data
 {
     public class OrderDetail : BaseEntity
     {
@@ -10,8 +8,6 @@ namespace ECommerceApi.Data
             Product = new Product();
         }
 
-        [MaxLength(50)]
-        public string ProductName { get; set; } = string.Empty;
         public int Quantity { get; set; }
         public decimal SubtotalPrice { get; set; }
 
