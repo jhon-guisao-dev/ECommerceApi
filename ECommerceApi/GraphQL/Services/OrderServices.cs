@@ -3,6 +3,7 @@
     using ECommerceApi.Data;
     using ECommerceApi.GraphQL.Interfaces.Services;
     using ECommerceApi.GraphQL.Mutations.Inputs.Orders;
+    using HotChocolate.AspNetCore;
     using Microsoft.EntityFrameworkCore;
 
     public class OrderServices : IOrderServices
@@ -17,6 +18,12 @@
         public async Task<Order> CreateOrder(CreateOrderInput input)
         {
             var customer = await _dbContext.Customers.Where(x => x.Id == input.CustomerId).FirstOrDefaultAsync();
+
+            if (customer == null)
+            {
+                throw new GraphQLRequestException($"Customer with id {input.CustomerId} not found");
+            }
+
             var order = new Order
             {
                 OrderDate = input.OrderDate,
@@ -27,6 +34,16 @@
             {
                 var product = await _dbContext.Products.Where(x => x.Id == detailInput.ProductId).FirstOrDefaultAsync();
 
+                if (product == null)
+                {
+                    throw new GraphQLRequestException($"Product with id {detailInput.ProductId} not found");
+                }
+
+                if (product.Stock < detailInput.Quantity)
+                {
+                    throw new GraphQLRequestException($"Insufficient stock of product {product.Name}");
+                }
+
                 var detail = new OrderDetail
                 {
                     Quantity = detailInput.Quantity,
@@ -34,6 +51,8 @@
                     Product = product!
                 };
                 order.OrderDetails.Add(detail);
+
+                product.Stock -= detailInput.Quantity;
             }
 
             _dbContext.Orders.Add(order);
