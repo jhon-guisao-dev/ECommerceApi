@@ -6,7 +6,7 @@
     using HotChocolate.AspNetCore;
     using Microsoft.EntityFrameworkCore;
 
-    public class OrderServices : IOrderServices
+    public class OrderServices : IOrderServices, IAsyncDisposable
     {
         private readonly DataContext _dbContext;
 
