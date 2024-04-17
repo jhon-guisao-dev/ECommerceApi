@@ -1,13 +1,15 @@
-﻿using ECommerceApi.Data;
-using HotChocolate.Types;
-
-namespace ECommerceApi.GraphQL.Queries
+﻿namespace ECommerceApi.GraphQL.Queries
 {
+    using ECommerceApi.Data;
+    using ECommerceApi.GraphQL.Interfaces.Services;
+
+    [ExtendObjectType("Query")]
     public class ProductQueries
     {
-        [UseFiltering]
-        [UseSorting]
-        public IQueryable<Product> GetProducts([Service] DataContext dbContext) =>
-            dbContext.Products;
+        [UsePaging]
+        public  IQueryable<Product> GetProducts(IProductServices productServices)
+        {
+            return  productServices.GetProducts();
+        }
     }
 }

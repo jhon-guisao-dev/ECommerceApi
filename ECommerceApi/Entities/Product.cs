@@ -6,7 +6,7 @@
     {
         public Product()
         {
-            ProductCategory = new ProductCategory();
+            ProductCategories = new List<ProductCategory>();    
         }
 
         [MaxLength(50)]
@@ -19,7 +19,6 @@
 
         //Relations
 
-        public long ProductCategoryId { get; set; }
-        public ProductCategory ProductCategory { get; set; }
+        public ICollection<ProductCategory> ProductCategories { get; set; }
     }
 }

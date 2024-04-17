@@ -157,8 +157,4 @@ C:\Users\johnj\source\repos\ECommerceApi\ECommerceApi\obj\Debug\net8.0\refint\EC
 C:\Users\johnj\source\repos\ECommerceApi\ECommerceApi\obj\Debug\net8.0\ECommerceApi.pdb
 C:\Users\johnj\source\repos\ECommerceApi\ECommerceApi\obj\Debug\net8.0\ECommerceApi.genruntimeconfig.cache
 C:\Users\johnj\source\repos\ECommerceApi\ECommerceApi\obj\Debug\net8.0\ref\ECommerceApi.dll
-C:\Users\johnj\source\repos\ECommerceApi\ECommerceApi\bin\Debug\net8.0\SimpleInjector.dll
-C:\Users\johnj\source\repos\ECommerceApi\ECommerceApi\bin\Debug\net8.0\SimpleInjector.Integration.AspNetCore.dll
-C:\Users\johnj\source\repos\ECommerceApi\ECommerceApi\bin\Debug\net8.0\SimpleInjector.Integration.GenericHost.dll
-C:\Users\johnj\source\repos\ECommerceApi\ECommerceApi\bin\Debug\net8.0\SimpleInjector.Integration.ServiceCollection.dll
 C:\Users\johnj\source\repos\ECommerceApi\ECommerceApi\bin\Debug\net8.0\HotChocolate.Data.dll
