@@ -7,6 +7,7 @@
     public class ProductQueries
     {
         [UsePaging]
+        [UseFiltering]
         public  IQueryable<Product> GetProducts(IProductServices productServices)
         {
             return  productServices.GetProducts();
