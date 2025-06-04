@@ -4,6 +4,6 @@
 
     public interface IProductCategoryServices
     {
-        public IQueryable<ProductCategory> GetProductCategories(long productCategoryId);
+        public IQueryable<ProductCategory> GetProductCategories(long productId);
     }
 }
