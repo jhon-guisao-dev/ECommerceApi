@@ -139,8 +139,11 @@
               }
             </code>
            </div>
-         </li>
+        </li>
       </ul>
+
+      <h1 class="title">Running tests</h1>
+      <p>Use the <code>dotnet test</code> command from the repository root to execute the unit tests. The tests are contained in the <code>ECommerceApi.Tests</code> project.</p>
 
   </body>
   <footer>
