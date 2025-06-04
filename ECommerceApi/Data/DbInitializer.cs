@@ -38,7 +38,7 @@
             }
 
             context.Products.AddRange(productList);
-            context.SaveChanges();
+            await context.SaveChangesAsync();
         }
 
         private  static List<ProductCategory> GetCategoryList(ProductCategory category, List<ProductCategory> categories)
